@@ -19,10 +19,13 @@ def main():
     for k in range(1,21):
         kmeans = KMeans(n_clusters=k, random_state=42)
         kmeans.fit(data_scal)
+        # labels = kmeans.labels_
         inertias.append(kmeans.inertia_)
 
 
     plt.plot(range(1,21), inertias, 'bo-')
+    # plt.axvline(x=optimal_k, color='red', linestyle='--')
+    # plt.scatter(data2d[:, 0], data2d[:, 1], c=labels)
 
     # for k in range(1,21):
     #     kmeans = KMeans(n_clusters=k)
